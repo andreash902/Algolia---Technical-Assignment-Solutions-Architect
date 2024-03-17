@@ -218,6 +218,7 @@ import {
   faBars, faCartPlus, faCartArrowDown, faChevronDown, faBook
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import algoliasearch from 'algoliasearch/lite';
 
 const menuicon = faBars;
 const ChevronDown = faChevronDown;
