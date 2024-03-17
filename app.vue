@@ -155,9 +155,6 @@
           </div>
           <!-- Search results display area -->
           <div class="hits">
-            <div class="box">
-    <div id="autocomplete" />
-  </div>
             <div class="hit-wrap-gobal">
               <div class="hit-search">
                 <ais-search-box :debounce="500" placeholder="Search for Products.."></ais-search-box>
@@ -211,53 +208,7 @@
 </template>
 
 <script lang="ts" setup>
-import { defineComponent, onMounted, h, ref } from 'vue';
-import { autocomplete, getAlgoliaResults, AutocompleteSource } from '@algolia/autocomplete-js';
-import algoliasearch from 'algoliasearch/lite';
-import '@algolia/autocomplete-theme-classic';
-import { createElement } from './utils/createElement';
-import ProductItem from './components/ProductItem.vue';
-
-const appId = 'latency';
-const apiKey = '6be0576ff61c053d5f9a3225e2a90f76';
-const searchClient = algoliasearch(appId, apiKey);
-
-export default defineComponent({
-  name: 'App',
-  setup() {
-    onMounted(() => {
-      autocomplete<{ label: string }>({
-        container: '#autocomplete',
-        placeholder: 'Search',
-        insights: true,
-        getSources: ({ query }): AutocompleteSource<{ label: string }>[] => {
-          return [
-            {
-              sourceId: 'products',
-              getItems() {
-                return getAlgoliaResults({
-                  searchClient,
-                  queries: [
-                    {
-                      indexName: 'instant_search',
-                      query,
-                    },
-                  ],
-                });
-              },
-              templates: {
-                item({ item, components }) {
-                  return h(ProductItem, { item, highlight: components.Highlight });
-                },
-              },
-            },
-          ];
-        },
-        renderer: { createElement, Fragment, render },
-      });
-    });
-  },
-});
+import { ref } from 'vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import {
   faBars, faCartPlus, faCartArrowDown, faChevronDown, faBook
@@ -530,4 +481,4 @@ const hitsPerPageItems = [
 }
 
 </style>
-./src/utils/createElement
+
