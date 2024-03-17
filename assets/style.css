@@ -1,0 +1,523 @@
+/*
+Contains everything that could easily be themed through
+normal style.css. The rest is in <style scoped> in app.vue
+Rearranged to somewhat meet Vue structure.
+*/
+
+.app-header {
+    background-color:#F5F5FA;
+    color: #ffffff;
+    padding: 20px;
+    text-align: left;
+    border: 1px solid rgba(214,214,231,.8);
+}
+
+.app-header::before {
+  content: "Info: Ideally view Client-Demo at 915px width or above";
+  display: none;
+  background-color: #ffcccc;
+  color: black;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+}
+
+@media (max-width: 900px) {
+  .app-header::before {
+    display: block;
+  }
+}
+
+.hit-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100%; 
+}
+
+.hit-img {
+    margin-bottom: 14px;
+    max-height: 100px;
+    max-width: 100px; 
+    width: auto; 
+    height: auto; 
+    object-fit: contain;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+#brands-section {
+    margin-bottom: 14px;
+}
+
+.sort-by-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.ais-ClearRefinements-button--disabled {
+    display: none;
+}
+
+.ais-ClearRefinements-button {
+    margin-bottom: 20px;
+}
+
+.sort-by-label {
+    font-size: 14px;
+    font-weight: 400;
+    color: #676981;
+}
+
+.brands-panel {
+    margin-top: 14px;
+}
+
+.brands-panel .ais-SearchBox {
+    margin-bottom: 14px;
+}
+
+.ais-SearchBox-input {
+    padding: 14px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.ais-SortBy-select {
+    min-width: auto;
+}
+
+.hit-search {
+    margin-bottom: 20px;
+}
+
+.stats-wrapper {
+    margin: 20px 4px 10px 4px;
+    display: flex;
+    min-width: 290px;
+    align-items: center;
+}
+
+.social-links {
+    padding-top: 4px;
+    display: flex; 
+    justify-content: left; 
+    gap: 10px;
+}
+
+.docs-wrapper {
+    padding-top: 10px;
+    display: flex; 
+    justify-content: left; 
+    gap: 10px;
+}
+
+.algoliadocs {
+    font-size: 11pt;
+    font-weight: 500;
+}
+
+.speed-label {
+    font-size: 11pt;
+    color: rgb(101, 94, 94);
+    margin-right: 5px;
+}
+
+.intro-text {
+    font-size: 11pt;
+    color: rgb(101, 94, 94);
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.doc-text {
+    font-size: 11pt;
+    color: rgb(101, 94, 94);
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.author-text {
+    font-size: 12pt;
+    font-weight: 100;
+    color: #655e5e;
+    opacity: 0.4;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+}
+
+.ais-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.left-side-content {
+    flex-direction: column;
+    justify-content: center;
+    flex: 0 0 250px;
+    min-width: 255px;
+    align-items: center;
+}
+
+.left-menu {
+    border: 1px solid rgba(214,214,231,.5);
+    flex: 0 0 200px;
+    padding: 10px 20px 0px 20px;
+    margin-right: 10px;
+    background: #F5F5FA;
+    overflow-y: auto;
+    border-radius: 8px;
+}
+
+.hit-wrap-gobal {
+    max-width: 1000px; 
+    margin: 0;
+}
+
+.custom-toggle-with-icon label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.custom-toggle-with-icon .custom-checkbox {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.custom-toggle-with-icon .is-refined .custom-checkbox {
+    background-color: #004085; 
+}
+
+.fa-check {
+    color: #fff; 
+}
+
+.hits {
+    flex-grow: 1;
+}
+
+.filter-label {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 14px;
+    color: #1e1e1f;
+}
+
+.brands-label, .categories-label, .refinement-label {
+    font-size: 14px;
+    font-weight: 400;
+    color: #676981;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.normal-label {
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 20px;
+    margin-bottom: 14px;
+    cursor: pointer;
+    color: #676981;
+    transition: color 0.3s ease;
+}
+
+.filter-label:hover, .brands-label:hover, .categories-label:hover, .brands-label:hover .toggle-btn, .categories-label:hover .toggle-btn {
+    color: #5468ff;
+    cursor: pointer;
+}
+
+.selected-refinements-container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+.ais-SearchBox-resetIcon{
+    display: none;
+    /* Can be reintroduced if wanted */
+}
+
+.clear-refinements {
+    margin-top: 14px;
+}
+
+.bottom-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 45px;
+}
+
+@media (max-width: 910px) {
+    .ais-Hits-list {
+        display: grid;
+    }
+    .ais-Hits-item {
+        min-width: 230px!important;
+    }
+}
+
+@media (max-width: 800px) {
+    .ais-Hits-list {
+        display: grid;
+    }
+    .ais-Hits-item {
+        min-width: 230px!important;
+    }
+}
+
+@media (max-width: 1254px) {
+    .ais-Hits-list {
+        display: grid;
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 664px) {
+     .ais-SearchBox-input {
+      max-width: 300px;
+    }
+}
+
+.ais-Hits-list {
+    display: grid;
+}
+
+.ais-Hits-item {
+    border: 1px solid rgba(214,214,231,.5);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    transition: box-shadow 0.3s ease;
+    padding: 10px;
+    min-width: 300px;
+}
+
+.ais-Hits-item:hover {
+    box-shadow: 0px 0px 8px hsl(233, 100%, 66%);
+    transform: scale(1.015);
+    transition: color 0.25s ease, transform 0.3s ease;
+}
+
+.hit-description {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.icon-large {
+    font-size: 4px!important;
+}
+
+.hit-description-wrapper {
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    word-wrap: break-word;
+    white-space: normal;    
+}
+
+.hit-item-shipping-option {
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 400;
+    color: white;
+    background-color: rgb(0, 150, 219);
+    border-radius: 5px; 
+    min-width: 110px;
+    padding: 5px;
+}
+
+.hit-item-buttom {
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+}
+
+.toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 14px;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    background-color: transparent;
+    border: none;
+    transform: rotate(90deg);
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.toggle-btn:hover {
+    color: #5468ff;
+}
+
+.rotate {
+    transform: rotate(270deg);
+    color: #5468ff;
+}
+
+.ais-ToggleRefinement-count {
+    margin-left: 10px;
+}
+
+.collapse-section {
+    display: none;
+}
+
+.expanded {
+    display: block;
+}
+
+.item-result-star, .item-result-star--empty {
+    font-size: 1.5em;
+}
+
+.item-result-star:before {
+    content: '\2605';
+    color: #719ddc;
+}
+
+.item-result-star--empty:before {
+    content: '\2606';
+    color: #ccc;
+}
+
+.hit-item-price {
+    font-size: 25px;
+    font-weight: bold;
+    right: 20px;
+    bottom: 14px;
+}
+
+.hit-image img {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+}
+
+.hit-name-wrapper {
+    margin-top: 40px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.hit-name {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.hit-content {
+    padding: 20px;
+}
+
+.ais-RefinementList-labelText {
+    color: rgb(78, 74, 74);
+    font-weight: 500;
+}
+
+.ais-RefinementList-labelText:hover {
+    color: #5468ff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.ais-RefinementList-count {
+    margin-left: 14px;
+}
+
+.ais-Menu-label {
+    color: rgb(78, 74, 74);
+    font-weight: 500;
+}
+
+.ais-Menu-label:hover {
+    color: #5468ff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.ais-Menu-count {
+    margin-left: 14px;
+}
+
+.ais-NumericMenu-labelText {
+    color: rgb(78, 74, 74);
+    font-weight: 500;
+}
+
+.ais-NumericMenu-labelText:hover {
+    color: #5468ff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.ais-ToggleRefinement-labelText {
+    color: rgb(78, 74, 74);
+    font-weight: 100;
+}
+
+.ais-ToggleRefinement-labelText:hover {
+    color: #5468ff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.ais-RatingMenu-link {
+    color: #000000;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.ais-RatingMenu-link:hover {
+    transform: scale(1.05); 
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.ais-RatingMenu-label {
+    color: rgb(47, 44, 44);
+    font-weight: 100;
+}
+
+.ais-RatingMenu-label:hover {
+    color: #5468ff;
+    font-weight: bold;
+    transition: color 0.1s ease;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Open Sans', sans-serif;
+}
