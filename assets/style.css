@@ -13,7 +13,7 @@ Rearranged to somewhat meet Vue structure.
 }
 
 .app-header::before {
-  content: "View Client Demo at 915px and above, click on CodeSanbox tab > Close and open in a browsertab";
+  content: "View Client UI-Demo at 915px and above, click on CodeSanbox tab > Close and open in a browsertab";
   display: none;
   background-color: #ffcccc;
   color: black;
@@ -24,6 +24,7 @@ Rearranged to somewhat meet Vue structure.
   position: fixed;
   bottom: 0;
   left: 0;
+  font-size:10px;
   z-index: 100;
 }
 
