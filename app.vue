@@ -157,7 +157,12 @@
           <div class="hits">
             <div class="hit-wrap-gobal">
               <div class="hit-search">
-                <ais-search-box :debounce="500" placeholder="Search for Products.."></ais-search-box>
+<!-- Inside the template section -->
+<ais-search-box 
+  :debounce="500" 
+  placeholder="Search for Products.." 
+  :autocomplete="true"
+></ais-search-box>
               </div>
               <ais-hits>
                 <template v-slot:item="{ item }">
