@@ -13,7 +13,7 @@ Rearranged to somewhat meet Vue structure.
 }
 
 .app-header::before {
-  content: "Info: Ideally view Client-Demo at 915px width or above";
+  content: "View Client Demo at 915px and above, click on CodeSanbox tab > Close and open in a browsertab";
   display: none;
   background-color: #ffcccc;
   color: black;
