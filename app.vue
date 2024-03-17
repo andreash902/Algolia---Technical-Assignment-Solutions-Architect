@@ -272,31 +272,32 @@ const hitsPerPageItems = [
 
 
 
-<style>
-:deep(.ais-SearchBox-input) {
+<style scoped>
+
+::v-deep .ais-SearchBox-input {
   justify-content: center;
   flex-grow: 0;
   max-width: 933px;
   margin: 0 auto;
 }
 @media (max-width: 1254px) {
-  :deep(.ais-SearchBox-input) {
+  ::v-deep .ais-SearchBox-input {
     max-width: 617px;
   }
 }
 @media (max-width: 910px) {
-  :deep(.ais-SearchBox-input) {
+  ::v-deep .ais-SearchBox-input {
     max-width: 475px;
   }
 }
 
-:deep(.ais-RatingMenu-list) {
+::v-deep .ais-RatingMenu-list {
   margin-bottom: 20px;
 }
 
-:deep(.ais-Stats-text) {
+::v-deep .ais-Stats-text {
   color: #5468ff;
-  font-size: 14pt; /* corrected typo in font size value */
+  font-size: 1=pt;
 }
 
 .menuicon, .linkedin, .github, .docs {
@@ -375,7 +376,7 @@ const hitsPerPageItems = [
   opacity: 1;
 }
 
-:deep(.hit-search .ais-SearchBox-input), :deep(.filter-section .ais-SearchBox-input) {
+::v-deep .hit-search .ais-SearchBox-input, ::v-deep .filter-section .ais-SearchBox-input {
   appearance: none;
   padding: 0.3rem 1.7rem;
   width: 100%;
@@ -389,23 +390,23 @@ const hitsPerPageItems = [
   font-family: 'Open Sans', sans-serif;
 }
 
-:deep(.hit-search .ais-SearchBox), :deep(.filter-section .ais-SearchBox) {
+::v-deep .hit-search .ais-SearchBox, ::v-deep .filter-section .ais-SearchBox {
   transition: transform 0.2s ease;
 }
 
-:deep(.hit-search .ais-SearchBox-input:hover), :deep(.filter-section .ais-SearchBox-input:hover) {
+::v-deep .hit-search .ais-SearchBox-input:hover, ::v-deep .filter-section .ais-SearchBox-input:hover {
   box-shadow: 0px 0px 8px hsl(233, 100%, 66%);
   background-color: white;
 }
 
-:deep(.filter-section .ais-SearchBox-input) {
+::v-deep .filter-section .ais-SearchBox-input {
   width: 200px;
   height: 30px;
   box-shadow: 0px 0px 5px hsl(233, 100%, 66%);
   font-size: 14px;
 }
 
-:deep(.ais-SortBy-select) {
+::v-deep .ais-SortBy-select {
   width: 125px;
   padding-left: 4px;
   padding-right: 8px;
@@ -422,24 +423,24 @@ const hitsPerPageItems = [
   transition: color 0.1s ease, box-shadow 0.1s ease, transform 0.1s ease; 
 }
 
-:deep(.ais-SortBy-select:hover) {
+::v-deep .ais-SortBy-select:hover {
   color: rgb(14, 14, 14);
   box-shadow: 0px 0px 8px hsl(233, 100%, 66%);
   transform: scale(1.025); 
 }
 
-:deep(.ais-ToggleRefinement-labelText),
-:deep(.ais-NumericMenu-labelText),
-:deep(.ais-Menu-label),
-:deep(.ais-RefinementList-labelText) { font-size: 13px; font-weight: 500; transition: font-size 0.1s ease; }
-:deep(.ais-ToggleRefinement-labelText:hover),
-:deep(.ais-NumericMenu-labelText:hover),
-:deep(.ais-Menu-label:hover),
-:deep(.ais-RefinementList-labelText:hover) { font-size: 13.25px; font-weight: bold; cursor: pointer; }
+::v-deep .ais-ToggleRefinement-labelText,
+::v-deep .ais-NumericMenu-labelText,
+::v-deep .ais-Menu-label,
+::v-deep .ais-RefinementList-labelText { font-size: 13px; font-weight: 500; transition: font-size 0.1s ease; }
+::v-deep .ais-ToggleRefinement-labelText:hover,
+::v-deep .ais-NumericMenu-labelText:hover,
+::v-deep .ais-Menu-label:hover,
+::v-deep .ais-RefinementList-labelText:hover { font-size: 13.25px; font-weight: bold; cursor: pointer; }
 
 
 
-:deep(.ais-HitsPerPage-select) {
+:v-deep .ais-HitsPerPage-select {
   flex-shrink: 0;
   width: 150px;
   padding-left: 8px;
@@ -457,14 +458,15 @@ const hitsPerPageItems = [
   transition: color 0.1s ease, box-shadow 0.1s ease, transform 0.1s ease; 
 }
 
-:deep(.ais-HitsPerPage-select:hover) {
+::v-deep .ais-HitsPerPage-select:hover {
   color: rgb(14, 14, 14);
   box-shadow: 0px 0px 8px hsl(233, 100%, 66%);
   transform: scale(1.025); 
 }
 
-:deep(.hit-search .ais-SearchBox:hover), :deep(.filter-section .ais-SearchBox:hover) {
+::v-deep .hit-search .ais-SearchBox:hover, ::v-deep .filter-section .ais-SearchBox:hover {
   transform: scale(1.005);
 }
+
 </style>
 
