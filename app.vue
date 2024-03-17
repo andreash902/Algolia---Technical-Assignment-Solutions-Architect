@@ -264,9 +264,11 @@ const priceRangeItems = [
 ];
 
 const hitsPerPageItems = [
-  { value: 6, label: 'Show 6 Products', default: true },
-  { value: 12, label: 'Show 12 Products' },
-  { value: 18, label: 'Show 18 Products' }
+  { value: 4, label: '4 Products per Page', default: true },
+  { value: 6, label: '6 Products per Page' },
+  { value: 12, label: '12 Products per Page' },
+  { value: 18, label: '18 Products per Page' },
+  { value: 10000, label: 'Show all Search Results' }
 ];
 </script>
 
@@ -274,30 +276,133 @@ const hitsPerPageItems = [
 
 <style scoped>
 
-::v-deep .ais-SearchBox-input {
+:deep(.ais-SearchBox-input) {
   justify-content: center;
   flex-grow: 0;
   max-width: 933px;
   margin: 0 auto;
 }
+
 @media (max-width: 1254px) {
-  ::v-deep .ais-SearchBox-input {
+  :deep(.ais-SearchBox-input) {
     max-width: 617px;
   }
 }
-@media (max-width: 910px) {
-  ::v-deep .ais-SearchBox-input {
+
+@media (max-width: 950px) {
+  :deep(.ais-SearchBox-input) {
     max-width: 475px;
   }
 }
 
-::v-deep .ais-RatingMenu-list {
+:deep(.ais-RatingMenu-list) {
   margin-bottom: 20px;
 }
 
-::v-deep .ais-Stats-text {
+:deep(.ais-Stats-text) {
   color: #5468ff;
   font-size: 1=pt;
+}
+
+:deep(.hit-search .ais-SearchBox-input),
+:deep(.filter-section .ais-SearchBox-input) {
+  appearance: none;
+  padding: 0.3rem 1.7rem;
+  width: 100%;
+  height: 40px;
+  position: relative;
+  background-color: #f5f5fa;
+  border: 1px solid #c4c8d8;
+  border-radius: 8px;
+  font-weight: 100;
+  font-family: 'Open Sans', sans-serif;
+}
+
+:deep(.hit-search .ais-SearchBox),
+:deep(.filter-section .ais-SearchBox) {
+  transition: transform 0.2s ease;
+}
+
+:deep(.hit-search .ais-SearchBox-input:hover),
+:deep(.filter-section .ais-SearchBox-input:hover) {
+  box-shadow: 0px 0px 8px hsl(233, 100%, 66%);
+  background-color: white;
+}
+
+:deep(.filter-section .ais-SearchBox-input) {
+  width: 200px;
+  height: 30px;
+  box-shadow: 0px 0px 5px hsl(233, 100%, 66%);
+}
+
+:deep(.ais-SortBy-select) {
+  width: 125px;
+  padding-left: 4px;
+  padding-right: 8px;
+  box-shadow: 0px 0px 5px hsl(233, 100%, 66%);
+  border: 1px solid #c4c8d8;
+  border-radius: 8px;
+  background-color: white;
+  appearance: none;
+  line-height: 16px;
+  font-size: 12px;
+  font-weight: 400; 
+  color: rgb(109, 108, 108);
+  cursor: pointer;
+  transition: color 0.1s ease, box-shadow 0.1s ease, transform 0.1s ease; 
+}
+
+:deep(.ais-SortBy-select:hover) {
+  color: rgb(14, 14, 14);
+  box-shadow: 0px 0px 8px hsl(233, 100%, 66%);
+  transform: scale(1.025); 
+}
+
+:deep(.ais-ToggleRefinement-labelText),
+:deep(.ais-NumericMenu-labelText),
+:deep(.ais-Menu-label),
+:deep(.ais-RefinementList-labelText) { 
+  font-size: 12px; 
+  font-weight: 500; 
+  transition: font-size 0.1s ease; 
+}
+
+:deep(.ais-ToggleRefinement-labelText:hover),
+:deep(.ais-NumericMenu-labelText:hover),
+:deep(.ais-Menu-label:hover),
+:deep(.ais-RefinementList-labelText:hover) { 
+  font-size: 12.5px; 
+  font-weight: bold; 
+  cursor: pointer; 
+}
+
+:deep(.ais-HitsPerPage-select) {
+  flex-shrink: 0;
+  width: 150px;
+  padding-left: 8px;
+  padding-right: 8px;
+  box-shadow: 0px 0px 5px hsl(240, 4%, 10%);
+  border: 1px solid #c4c8d8;
+  border-radius: 8px;
+  background-color: white;
+  appearance: none;
+  line-height: 16px;
+  font-size: 12px;
+  font-weight: 400; 
+  color: rgb(109, 108, 108);
+  cursor: pointer;
+  transition: color 0.1s ease, box-shadow 0.1s ease, transform 0.1s ease; 
+}
+
+:deep(.ais-HitsPerPage-select:hover) {
+  color: rgb(14, 14, 14);
+  box-shadow: 0px 0px 8px hsl(233, 100%, 66%);
+  transform: scale(1.025); 
+}
+
+:deep(.hit-search .ais-SearchBox:hover),
+:deep(.filter-section .ais-SearchBox:hover) {
+  transform: scale(1.005);
 }
 
 .menuicon, .linkedin, .github, .docs {
@@ -374,98 +479,6 @@ const hitsPerPageItems = [
 
 .buynow-container:hover .buynow {
   opacity: 1;
-}
-
-::v-deep .hit-search .ais-SearchBox-input, ::v-deep .filter-section .ais-SearchBox-input {
-  appearance: none;
-  padding: 0.3rem 1.7rem;
-  width: 100%;
-  height: 50px;
-  position: relative;
-  background-color: #F5F5FA;
-  border: 1px solid #c4c8d8;
-  border-radius: 8px;
-  font-size: 20px;
-  font-weight: 100;
-  font-family: 'Open Sans', sans-serif;
-}
-
-::v-deep .hit-search .ais-SearchBox, ::v-deep .filter-section .ais-SearchBox {
-  transition: transform 0.2s ease;
-}
-
-::v-deep .hit-search .ais-SearchBox-input:hover, ::v-deep .filter-section .ais-SearchBox-input:hover {
-  box-shadow: 0px 0px 8px hsl(233, 100%, 66%);
-  background-color: white;
-}
-
-::v-deep .filter-section .ais-SearchBox-input {
-  width: 200px;
-  height: 30px;
-  box-shadow: 0px 0px 5px hsl(233, 100%, 66%);
-  font-size: 14px;
-}
-
-::v-deep .ais-SortBy-select {
-  width: 125px;
-  padding-left: 4px;
-  padding-right: 8px;
-  box-shadow: 0px 0px 5px hsl(233, 100%, 66%);
-  border: 1px solid #c4c8d8;
-  border-radius: 8px;
-  background-color: white;
-  appearance: none;
-  line-height: 16px;
-  font-size: 12px;
-  font-weight: 400; 
-  color: rgb(109, 108, 108);
-  cursor: pointer;
-  transition: color 0.1s ease, box-shadow 0.1s ease, transform 0.1s ease; 
-}
-
-::v-deep .ais-SortBy-select:hover {
-  color: rgb(14, 14, 14);
-  box-shadow: 0px 0px 8px hsl(233, 100%, 66%);
-  transform: scale(1.025); 
-}
-
-::v-deep .ais-ToggleRefinement-labelText,
-::v-deep .ais-NumericMenu-labelText,
-::v-deep .ais-Menu-label,
-::v-deep .ais-RefinementList-labelText { font-size: 13px; font-weight: 500; transition: font-size 0.1s ease; }
-::v-deep .ais-ToggleRefinement-labelText:hover,
-::v-deep .ais-NumericMenu-labelText:hover,
-::v-deep .ais-Menu-label:hover,
-::v-deep .ais-RefinementList-labelText:hover { font-size: 13.25px; font-weight: bold; cursor: pointer; }
-
-
-
-:v-deep .ais-HitsPerPage-select {
-  flex-shrink: 0;
-  width: 150px;
-  padding-left: 8px;
-  padding-right: 8px;
-  box-shadow: 0px 0px 5px hsl(233, 100%, 66%);
-  border: 1px solid #c4c8d8;
-  border-radius: 8px;
-  background-color: white;
-  appearance: none;
-  line-height: 16px;
-  font-size: 17px;
-  font-weight: 400; 
-  color: rgb(109, 108, 108);
-  cursor: pointer;
-  transition: color 0.1s ease, box-shadow 0.1s ease, transform 0.1s ease; 
-}
-
-::v-deep .ais-HitsPerPage-select:hover {
-  color: rgb(14, 14, 14);
-  box-shadow: 0px 0px 8px hsl(233, 100%, 66%);
-  transform: scale(1.025); 
-}
-
-::v-deep .hit-search .ais-SearchBox:hover, ::v-deep .filter-section .ais-SearchBox:hover {
-  transform: scale(1.005);
 }
 
 </style>

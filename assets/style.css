@@ -171,7 +171,7 @@ Rearranged to somewhat meet Vue structure.
     flex-direction: column;
     justify-content: center;
     flex: 0 0 250px;
-    min-width: 255px;
+    min-width: 200px;
     align-items: center;
 }
 
@@ -273,7 +273,7 @@ Rearranged to somewhat meet Vue structure.
     margin-bottom: 45px;
 }
 
-@media (max-width: 910px) {
+@media (max-width: 950px) {
     .ais-Hits-list {
         display: grid;
     }
@@ -282,14 +282,6 @@ Rearranged to somewhat meet Vue structure.
     }
 }
 
-@media (max-width: 800px) {
-    .ais-Hits-list {
-        display: grid;
-    }
-    .ais-Hits-item {
-        min-width: 230px!important;
-    }
-}
 
 @media (max-width: 1254px) {
     .ais-Hits-list {
@@ -298,11 +290,7 @@ Rearranged to somewhat meet Vue structure.
     }
 }
 
-@media (max-width: 664px) {
-     .ais-SearchBox-input {
-      max-width: 300px;
-    }
-}
+
 
 .ais-Hits-list {
     display: grid;
