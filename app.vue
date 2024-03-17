@@ -157,13 +157,9 @@
           <div class="hits">
             <div class="hit-wrap-gobal">
               <div class="hit-search">
-<!-- Inside the template section -->
-<ais-search-box 
-  :debounce="500" 
-  placeholder="Search for Products.." 
-  :autocomplete="true"
-></ais-search-box>
+                <ais-search-box :debounce="500" placeholder="Search for Products.."></ais-search-box>
               </div>
+              <div class="autocomplete-container" id="autocomplete"></div>
               <ais-hits>
                 <template v-slot:item="{ item }">
                   <div class="hit-item">
@@ -213,7 +209,10 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
+import { autocomplete, getAlgoliaResults } from '@algolia/autocomplete-js';
+import ProductItem from './components/ProductItem.vue';
+// Adjust path as necessary
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import {
   faBars, faCartPlus, faCartArrowDown, faChevronDown, faBook
@@ -240,6 +239,33 @@ const changeIcon = (icon: typeof addcart | typeof downcart) => { currentIcon.val
 const browseProductsVisible = ref(false);
 const toggleBrowseProducts = () => { browseProductsVisible.value = !browseProductsVisible.value; };
 const browseIcon = () => { return browseProductsVisible.value ? faBars : faChevronDown; };
+const searchClient = algoliasearch('XIBNVPFIEF', 'a8a7412fe12dce49086694f747537a6b');
+
+onMounted(() => {
+  autocomplete({
+    container: '#autocomplete',
+    placeholder: 'Search for products',
+    getSources({ query }) {
+      return [
+        {
+          sourceId: 'products',
+          getItems() {
+            return getAlgoliaResults({
+              searchClient,
+              queries: [{ indexName: 'ProductCatalog', query }],
+            });
+          },
+          templates: {
+            item({ item, components }) {
+              return h(ProductItem, { item });
+            },
+          },
+        },
+      ];
+    },
+  });
+});
+
 const algolia = useAlgoliaRef();
 // Algolia Widgets I used
 import {
@@ -247,6 +273,7 @@ import {
   AisRefinementList, AisSortBy, AisPagination, AisHitsPerPage,
   AisPanel, AisMenu, AisNumericMenu, AisRatingMenu, AisToggleRefinement, AisStats
 } from 'vue-instantsearch/vue3/es';
+
 
 const brandsSectionVisible = ref(false);
 const categoriesSectionVisible = ref(false);
@@ -269,7 +296,8 @@ const priceRangeItems = [
 ];
 
 const hitsPerPageItems = [
-  { value: 6, label: '6 Products per Page', default: true  },
+  { value: 4, label: '4 Products per Page', default: true },
+  { value: 6, label: '6 Products per Page' },
   { value: 12, label: '12 Products per Page' },
   { value: 18, label: '18 Products per Page' },
   { value: 10000, label: 'Show all Search Results' }

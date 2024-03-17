@@ -10,12 +10,17 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@algolia/autocomplete-js": "^1.17.0",
+    "@algolia/autocomplete-plugin-query-suggestions": "^1.17.0",
+    "@algolia/autocomplete-plugin-recent-searches": "^1.17.0",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/vue-fontawesome": "^3.0.6",
     "@nuxt/image": "^1.4.0",
     "@nuxtjs/algolia": "^1.10.1",
+    "algoliasearch": "^4.22.1",
+    "instantsearch.js": "^4.66.0",
     "nuxt": "^3.10.3",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
