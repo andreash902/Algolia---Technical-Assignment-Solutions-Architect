@@ -24,7 +24,7 @@ Rearranged to somewhat meet Vue structure.
   position: fixed;
   bottom: 0;
   left: 0;
-  font-size:12px;
+  font-size:14px;
   z-index: 100;
 }
 
