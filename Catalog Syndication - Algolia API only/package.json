@@ -1,0 +1,26 @@
+{
+  "name": "product-feed-syndication-script---algolia-ingestion-only",
+  "version": "1.0.0",
+  "description": "This script misses Kafka and the XML download and simulates only the push to Algolia Ingestion API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreash902/Algolia-Solution-Architect---Hiring-Test.git"
+  },
+  "keywords": [
+    "algolia",
+    "api"
+  ],
+  "author": "Andreas Hack",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andreash902/Algolia-Solution-Architect---Hiring-Test/issues"
+  },
+  "homepage": "https://github.com/andreash902/Algolia-Solution-Architect---Hiring-Test#readme",
+  "dependencies": {
+    "axios": "^1.6.7"
+  }
+}

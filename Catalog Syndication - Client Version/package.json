@@ -1,0 +1,30 @@
+{
+  "name": "catalog-syndication--client-version",
+  "version": "1.0.0",
+  "description": "A full version of the Catalog syndication script for the take home assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreash902/Algolia-Solution-Architect---Hiring-Test.git#main"
+  },
+  "keywords": [
+    "algolia",
+    "hiring-test",
+    "catalog-syndication",
+    "script"
+  ],
+  "author": "Andreas Hack",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andreash902/Algolia-Solution-Architect---Hiring-Test/issues"
+  },
+  "homepage": "https://github.com/andreash902/Algolia-Solution-Architect---Hiring-Test/tree/main#readme",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "kafka-node": "^5.0.0",
+    "xml2js": "^0.6.2"
+  }
+}
