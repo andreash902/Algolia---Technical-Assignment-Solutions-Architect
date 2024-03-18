@@ -244,7 +244,11 @@ Documentation Links:
   description: string;
   free_shipping?: boolean; // assuming this could be optional
 }
-
+import {
+    AisCurrentRefinements, AisClearRefinements, AisInstantSearch, AisSearchBox, AisHits,
+    AisRefinementList, AisSortBy, AisPagination, AisHitsPerPage,
+    AisPanel, AisMenu, AisNumericMenu, AisRatingMenu, AisToggleRefinement, AisStats
+  } from 'vue-instantsearch/vue3/es';
 
   const brandsSectionVisible = ref(false);
   const categoriesSectionVisible = ref(false);
