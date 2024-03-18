@@ -5,11 +5,13 @@ Rearranged to somewhat meet Vue structure.
 */
 
 .app-header {
-    background-color:#F5F5FA;
+    background-color: #F5F5FA;
     color: #ffffff;
     padding: 20px;
     text-align: left;
-    border: 1px solid rgba(214,214,231,.8);
+    border: 1px solid rgba(214, 214, 231, .8);
+    width: 100vw;
+    box-sizing: border-box; 
 }
 
 .app-header::before {
