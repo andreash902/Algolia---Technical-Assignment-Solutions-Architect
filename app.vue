@@ -269,6 +269,9 @@ Documentation Links:
   color: #23263b;
   font-weight: bold;
 }
+:deep(.ais-RatingMenu-label){
+  display: none;
+}
 
 :deep(.ais-ClearRefinements-button--disabled) {
     display: none;
