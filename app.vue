@@ -214,22 +214,18 @@ Documentation Links:
 <script lang="ts" setup>
   import { ref } from 'vue';
   import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-  import { faBars, faCartPlus, faCartArrowDown, faChevronDown, faBook } from '@fortawesome/free-solid-svg-icons';
+  import { faBars, faChevronDown, faBook } from '@fortawesome/free-solid-svg-icons';
   import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
   import { faCheckSquare as farCheckSquare } from '@fortawesome/free-regular-svg-icons';
 
 
-  const menuicon = faBars;
-  const ChevronDown = faChevronDown;
   const linkedin = faLinkedin;
   const github = faGithub;
-  const docs = faBook;
   const indexName = 'ProductCatalog';
   const openURL = (url: string) => url && window.open(url, '_blank');
   const linkedinUrl = 'https://www.linkedin.com/in/andreas-j-hack/';
   const githubUrl = 'https://github.com/andreash902/Algolia-Solution-Architect---Hiring-Test';
   const miroUrl = 'https://miro.com/app/board/uXjVNgkFMqI=/';
-  const algoliaDocsUrl = 'https://www.algolia.com/doc/guides/building-search-ui/installation/vue/';
   const openUrlInNewTab = (url: string) => {  if (url) window.open(url, '_blank', 'noopener,noreferrer'); };
   const browseProductsVisible = ref(false);
   const toggleBrowseProducts = () => { browseProductsVisible.value = !browseProductsVisible.value; };
@@ -237,14 +233,18 @@ Documentation Links:
   const algolia = useAlgoliaRef();
   const cartCount = ref(0);
   const totalPrice = ref(0);
-  const addToCart = (item) => { cartCount.value++; totalPrice.value += item.price; };
+  const addToCart = (item: CartItem) => { cartCount.value++; totalPrice.value += item.price; };
   const resetCart = () => { cartCount.value = 0; totalPrice.value = 0;};
 
-  import {
-    AisCurrentRefinements, AisClearRefinements, AisInstantSearch, AisSearchBox, AisHits,
-    AisRefinementList, AisSortBy, AisPagination, AisHitsPerPage,
-    AisPanel, AisMenu, AisNumericMenu, AisRatingMenu, AisToggleRefinement, AisStats
-  } from 'vue-instantsearch/vue3/es';
+  interface CartItem {
+  price: number;
+  image: string;
+  name: string;
+  rating: number;
+  description: string;
+  free_shipping?: boolean; // assuming this could be optional
+}
+
 
   const brandsSectionVisible = ref(false);
   const categoriesSectionVisible = ref(false);
@@ -422,7 +422,7 @@ Documentation Links:
   transform: scale(1.025); 
 }
 
-/* Social Icons */
+/* Project Icons */
 .menuicon, .linkedin, .github, .docs {
   width: 25px;
   height: 22px;
