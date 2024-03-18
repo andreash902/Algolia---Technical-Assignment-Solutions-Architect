@@ -211,11 +211,15 @@ html, body {
     gap: 10px;
 }
 
+.speed-info{
+    margin-top: 10px;
+}
 
 .speed-label {
     font-size: 11pt;
     color: rgb(101, 94, 94);
     margin-right: 5px;
+    margin-left: 20px;
 }
 
 .intro-text {
