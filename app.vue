@@ -124,7 +124,11 @@ Documentation Links:
                 </div>
               </div>
             </div>
-         
+            <!-- Speed information -->
+            <div class="speed-info">
+            <span class="speed-label">Speed:</span>
+            <ais-stats></ais-stats>
+          </div>
           </div>
           <!-- Display search results -->
           <div class="hits">
