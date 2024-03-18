@@ -139,6 +139,11 @@ Documentation Links:
               <ais-hits>
                 <template v-slot:item="{ item }">
                   <div class="hit-item"  @click="addToCart(item)">
+                    <div class="hit-add-to-car-container"> 
+                      <div class="hit-item-add-to-cart">
+                        <font-awesome-icon :icon="farCheckSquare" />
+                      </div>
+                      </div>
                     <div class="hit-content">
                       <div class="hit-img-container">
                         <!-- Product image -->
@@ -179,10 +184,11 @@ Documentation Links:
               </div>
               <!-- Cart icon -->
               <div class="cart-icon"">
-                <font-awesome-icon icon="cart-plus" />
-                <div class="cart-count">{{ cartCount }}</div>
-                <div class="total-price">Total: ${{ totalPrice.toFixed(2) }}</div>
-                <div class="tooltip">Click on Item to add to Cart</div>
+                <font-awesome-icon icon="cart-plus"  @click="resetCart" />
+                <div class="cart-count"  @click="resetCart" >{{ cartCount }}</div>
+                <font-awesome-icon icon="fa-solid fa-x" class="remove-total-icon" @click="resetCart" />
+                <div class="total-price"  @click="resetCart" >Total: <span class="sum">${{ totalPrice.toFixed(2) }}</span></div>
+                <div class="tooltip"  @click="resetCart" >Click a Result to add to Cart</div>
               </div>
             </div>
           </div>
@@ -208,10 +214,10 @@ Documentation Links:
 <script lang="ts" setup>
   import { ref } from 'vue';
   import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-  import { 
-    faBars, faCartPlus, faCartArrowDown, faChevronDown, faBook 
-  } from '@fortawesome/free-solid-svg-icons';
+  import { faBars, faCartPlus, faCartArrowDown, faChevronDown, faBook } from '@fortawesome/free-solid-svg-icons';
   import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+  import { faCheckSquare as farCheckSquare } from '@fortawesome/free-regular-svg-icons';
+
 
   const menuicon = faBars;
   const ChevronDown = faChevronDown;
@@ -232,6 +238,7 @@ Documentation Links:
   const cartCount = ref(0);
   const totalPrice = ref(0);
   const addToCart = (item) => { cartCount.value++; totalPrice.value += item.price; };
+  const resetCart = () => { cartCount.value = 0; totalPrice.value = 0;};
 
   import {
     AisCurrentRefinements, AisClearRefinements, AisInstantSearch, AisSearchBox, AisHits,
@@ -276,6 +283,9 @@ Documentation Links:
   font-weight: bold;
 }
 :deep(.ais-RatingMenu-label){
+  display: none;
+}
+:deep(.ais-ToggleRefinement-count) {
   display: none;
 }
 
@@ -325,7 +335,8 @@ Documentation Links:
 :deep(.ais-ToggleRefinement-label) {
   display: flex;
   align-items: center;
-  cursor: pointer;
+  justify-content: left;
+  flex-direction: row;
 }
 :deep(.ais-ToggleRefinement-labelText) {
   margin-left: 5px;
@@ -342,12 +353,14 @@ Documentation Links:
   border-radius: 8px;
   font-weight: 100;
   font-family: 'Open Sans', sans-serif;
+  transition: color 0.1s ease, box-shadow 0.1s ease, transform 0.1s ease; 
 }
 
 :deep(.hit-search .ais-SearchBox-input:hover),
 :deep(.filter-section .ais-SearchBox-input:hover) {
   box-shadow: 0px 0px 8px hsl(233, 100%, 66%);
   background-color: white;
+  transform: scale(1.0025); 
 }
 :deep(.hit-search .ais-SearchBox-input) {
   padding: 14px 20px;
