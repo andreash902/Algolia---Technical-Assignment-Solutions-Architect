@@ -184,9 +184,8 @@ Documentation Links:
               </div>
               <!-- Cart icon -->
               <div class="cart-icon">
-                <font-awesome-icon icon="cart-plus"  @click="resetCart" />
+                <font-awesome-icon :icon="cartPlusIcon" @click="resetCart" />
                 <div class="cart-count"  @click="resetCart" >{{ cartCount }}</div>
-                <font-awesome-icon icon="fa-solid fa-x" class="remove-total-icon" @click="resetCart" />
                 <font-awesome-icon :icon="xIcon" class="remove-total-icon" @click="resetCart" />
                 <div class="total-price"  @click="resetCart" >Total: <span class="sum">${{ totalPrice.toFixed(2) }}</span></div>
                 <div class="tooltip"  @click="resetCart" >Click Product to add to Cart</div>
