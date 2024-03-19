@@ -4,8 +4,7 @@
 
 <b><center><p id="description">The objective of this GitHub repository is to host the codebase for the Algolia Data Integration Solution project. This project aims to design and implement a comprehensive data integration solution connecting various systems to Algolia for efficient search functionality. The project also requires building a demo UI to showcase the new search functionality to the client. The UI highlights Algolia's key features, demonstrate an understanding of Algolia's service offerings, in our case many parameters and instantsearch.</p></center>
 
-<br><h2>💻 TECHNOLOGIES USED</h3><br>
-
+<br><h2>💻 TECHNOLOGIES USED</h3>
 
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![Nuxtjs](https://img.shields.io/badge/Nuxt-002E3B?style=for-the-badge&logo=nuxtdotjs&logoColor=#00DC82)
