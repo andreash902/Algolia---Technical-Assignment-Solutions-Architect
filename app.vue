@@ -107,7 +107,7 @@ Documentation Links:
                 </div>
                 <!-- Refinement list for brands -->
                 <div class="filter-section">
-                  <div class="brands-label" click="toggleBrands">
+                  <div class="brands-label" @click="toggleBrands">
                     BRANDS
                     <button
                       class="toggle-btn"
