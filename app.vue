@@ -84,7 +84,7 @@ Documentation Links:
                 </div> 
                 <!-- Refinement list for brands -->
                 <div class="filter-section">
-                  <div class="brands-label" @click="toggleBrands">
+                  <div class="brands-label" click="toggleBrands">
                     BRANDS
                     <button class="toggle-btn" :class="{ 'rotate': brandsSectionVisible }">❯</button>
                   </div>
@@ -137,7 +137,7 @@ Documentation Links:
             <div class="hit-wrap-gobal">
               <!-- Hits rendering -->
               <ais-hits>
-                <template v-slot:item="{ item }">
+                <template #item="{ item }">
                   <div class="hit-item"  @click="addToCart(item)">
                     <div class="hit-add-to-car-container"> 
                       <div class="hit-item-add-to-cart">
@@ -323,7 +323,6 @@ import {
 /* Hits and Hits Item */
 :deep(.ais-Hits-list) {
   min-width: 1000px;
-  max-width: 1000px;
 }
 :deep(.ais-Hits-item) {
   border: 1px solid rgb(214, 214, 231);
