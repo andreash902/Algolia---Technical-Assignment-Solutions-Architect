@@ -44,6 +44,7 @@ Documentation Links:
     :index-name="indexName"
     :search-client="algolia"
     :future="futureConfig"
+    :insights="true"
   >
     <div>
       <!-- Header section -->
