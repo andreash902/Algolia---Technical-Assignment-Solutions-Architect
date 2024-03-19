@@ -27,7 +27,7 @@
 
 
 <br><h2>🌳 PROJECT STRUCTRUE </h2><br><B>
-REPOSITORY<br>
+REPOSITORY<br></b>
 │<br>
 ├── Catalog Syndication - Algolia API only/    ----------------------Script for API push to Algolia<br> 
 │   └── index.js<br>
@@ -45,7 +45,7 @@ REPOSITORY<br>
 │   ├── fav.ico<br>
 │   └── miro.webp<br>
 │<br>
-└── app.vue---------------------------------------------------------- NUXT 3 - UI DEMO VUE APP<br><br></b>
+└── app.vue---------------------------------------------------------- NUXT 3 - UI DEMO VUE APP<br><br>
 <br><h2>🚀 GETTING STARTED WITH THE PROJECT </h2>
 <pre>1. First check Catalog Syndication - Client Version/index.js as it handles the import to Algolia for indexing</pre>
 <pre>2. Optional: Use Support Access to Review the bits and pieces configured in my Algolia Account</pre>
