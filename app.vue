@@ -41,7 +41,7 @@ Documentation Links:
 
 <template>
   <!-- InstantSearch component initialization -->
-  <ais-instant-search :index-name="indexName" :search-client="algolia">
+  <ais-instant-search :index-name="indexName" :search-client="algolia" :future="futureConfig">
     <div>
       <!-- Header section -->
       <div class="app-header">
