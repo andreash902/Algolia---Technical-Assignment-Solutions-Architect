@@ -76,10 +76,11 @@ yarn dev
 [OPEN IN CODESANDBOX](https://algolia-technical-assignment-solutions-architect-ojap3cqkl.vercel.app) </b>
 
 > **Important:** During testing I have encountered a bug with <br>CodeSandbox and Nuxt 3 Deployments we need to address first:
-> <b>1. <b>.env</b> needs to be created with API-Key and APP-ID as expected which is fine:</b>
+> <b>The <b>.env</b> needs to be created with API-Key and APP-ID as expected which is fine:</b>
 <pre>ALGOLIA_APPLICATION_ID=XIBNVPFIEF
 ALGOLIA_API_KEY=a8a7412fe12dce49086694f747537a6b</pre><br>
-> 2. In codesandbox even though you add the <b>Environment Variables</b> you will maybe not be able to get it launched due to a bug in their Vite configuration. If you're invited as member and set your Environement Variables it works perfectly fine. But as a guest even with workarounds we face Vite errors and it is therefore <u>almost unusubale for UI Demo reviews</u> currently on my stack.<br>
+
+> In codesandbox even though you add the <b>Environment Variables</b> you will maybe not be able to get it launched due to a bug in their Vite configuration. If you're invited as member and set your Environement Variables it works perfectly fine. But as a guest even with workarounds we face Vite errors and it is therefore <u>almost unusubale for UI Demo reviews</u> currently on my stack.<br>
 <b> <br>This issue / bug is reported to Codesandbox already and they are on it.</b>
 
 
