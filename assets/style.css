@@ -386,8 +386,8 @@ html, body {
 
 .bottom-controls {
     display: flex;
-    justify-content: left;
-    align-items: left;
+    justify-content: center;
+    align-items: center;
     gap: 50px;
     margin-top: 20px;
     margin-bottom: 45px;
