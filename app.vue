@@ -187,6 +187,7 @@ Documentation Links:
                 <font-awesome-icon icon="cart-plus"  @click="resetCart" />
                 <div class="cart-count"  @click="resetCart" >{{ cartCount }}</div>
                 <font-awesome-icon icon="fa-solid fa-x" class="remove-total-icon" @click="resetCart" />
+                <font-awesome-icon :icon="xIcon" class="remove-total-icon" @click="resetCart" />
                 <div class="total-price"  @click="resetCart" >Total: <span class="sum">${{ totalPrice.toFixed(2) }}</span></div>
                 <div class="tooltip"  @click="resetCart" >Click Product to add to Cart</div>
               </div>
@@ -214,12 +215,16 @@ Documentation Links:
 <script lang="ts" setup>
   import { ref } from 'vue';
   import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-  import { faBars, faChevronDown, faBook } from '@fortawesome/free-solid-svg-icons';
+  import { faBars, faChevronDown, faBook, faCartPlus, faX } from '@fortawesome/free-solid-svg-icons';
   import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
   import { faCheckSquare as farCheckSquare } from '@fortawesome/free-regular-svg-icons';
 
+
+
   const linkedin = faLinkedin;
   const github = faGithub;
+  const cartPlusIcon = faCartPlus;
+  const xIcon = faX;
   const indexName = 'ProductCatalog';
   const openURL = (url: string) => url && window.open(url, '_blank');
   const linkedinUrl = 'https://www.linkedin.com/in/andreas-j-hack/';
@@ -242,8 +247,9 @@ Documentation Links:
   name: string;
   rating: number;
   description: string;
-  free_shipping?: boolean; // assuming this could be optional
+  free_shipping?: boolean;
 }
+
 import {
     AisCurrentRefinements, AisClearRefinements, AisInstantSearch, AisSearchBox, AisHits,
     AisRefinementList, AisSortBy, AisPagination, AisHitsPerPage,
