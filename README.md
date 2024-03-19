@@ -1,4 +1,4 @@
-<h1 align="center" id="title"><b>🌐ALGOLIA</B> DATA INTEGRATION SOLUTION & <br> CLIENT UI DEMO REPOSITORY</h1>
+<h1 align="center" id="title"><b>🌐ALGOLIA</B> DATA INTEGRATION SOLUTION <br> & CLIENT UI DEMO REPOSITORY</h1>
 
 <p align="center"><img src="https://media.licdn.com/dms/image/D4E16AQH3kKXcRJWoSg/profile-displaybackgroundimage-shrink_200_800/0/1666804692598?e=2147483647&amp;v=beta&amp;t=0lT4sz1TsIzEUJRIeFEded0xM9DlNNWjQecdltvW8Ww" alt="project-image"></p>
 
