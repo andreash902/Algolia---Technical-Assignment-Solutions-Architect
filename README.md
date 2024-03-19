@@ -33,30 +33,30 @@
 <B>
 REPOSITORY<br>
 │<br>
-├── Catalog Syndication - Algolia API only/    -------------------------------- Script for API push to Algolia<br> 
+├── Catalog Syndication - Algolia API only/    ----------------------Script for API push to Algolia<br> 
 │   └── index.js<br>
 │<br>
-├── Catalog Syndication - Client Version/  ---------------------------------- Client Script Version | FULL <br> 
+├── Catalog Syndication - Client Version/  ------------------------Client Script Version | FULL <br> 
 │   └── index.js<br>
 │<br>
 ├── assets/<br>
-│   └── style.css ----------------------------------------------------------------- NUXT 3 - UI DEMO STYLE<br>
+│   └── style.css --------------------------------------------------------NUXT 3 - UI DEMO STYLE<br>
 │<br>
 ├── plugins/<br>
 │<br>
-├── public/--------------------------------------------------------------------- NUXT 3 - UI DEMO IMGs<br>
+├── public/------------------------------------------------------------NUXT 3 - UI DEMO IMGs<br>
 │   ├── header.webp<br>
 │   ├── fav.ico<br>
 │   └── miro.webp<br>
 │<br>
-└── app.vue-------------------------------------------------------------------- NUXT 3 - UI DEMO VUE APP<br><br></b>
+└── app.vue---------------------------------------------------------- NUXT 3 - UI DEMO VUE APP<br><br></b>
 
 <br><h2>🚀 GETTING STARTED WITH THE PROJECT </h2>
 <pre>1. First check Catalog Syndication - Client Version/index.js as it handles the import to Algolia for indexing</pre>
 <pre>2. Optional: Use Support Access to Review the bits and pieces configured in my Algolia Account</pre>
 <pre>3. Fire up CodeSandbox & ideally (*1) Vercel to review the UI (+ it's code if you're bold enough to scroll)</pre>
 
-<br><h2>🚀 LOCALLY PREVIEW DEV BUILD</h2>
+<br><h2>🔎 LOCAL DEV PREVIEW </h2>
 Locally preview production build:
 
 ```bash
@@ -72,13 +72,20 @@ yarn dev
 
 <b>Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.</b>
 
+<br><h2>🏖️ TRY ON SANDBOXES</h2><b>
 
-<h2>Project Structure</h2>
+![Vercel](https://img.shields.io/badge/Vercel-000000.svg?style=for-the-badge&logo=Vercel&logoColor=white)
+[VIEW UI DIRECTLY ON VERCEL](https://algolia-technical-assignment-solutions-architect-ojap3cqkl.vercel.app) ⬅️ SUGGESTED 
 
-<p>The UI demo is organized as follows:</p>
+![CS](https://img.shields.io/badge/CodeSandbox-151515.svg?style=for-the-badge&logo=CodeSandbox&logoColor=white)
+[OPEN IN CODESANDBOX](https://algolia-technical-assignment-solutions-architect-ojap3cqkl.vercel.app) </b>
 
-<ul>
-    <li><strong>Header</strong>: Features a captivating image to immediately grab the user's attention.</li>
-    <li><strong>Search Options</strong>: Allows users to sort, filter by various criteria such as brand, category, price range, and shipping options.</li>
-    <li><strong>Documentation</strong>: Detailed instructions in the Algolia documentation for Vue InstantSearch setup.</li>
-</ul>
+> **Important:** During testing I have encountered a bug with <br>CodeSandbox and Nuxt 3 Deployments we need to address first:
+1   <b>.env</b> needs to be created with API-Key and APP-ID <br>
+<pre>ALGOLIA_APPLICATION_ID=XIBNVPFIEF
+ALGOLIA_API_KEY=a8a7412fe12dce49086694f747537a6b</pre><br>
+2 In ![CS](https://img.shields.io/badge/CodeSandbox-151515.svg?style=for-the-badge&logo=CodeSandbox&logoColor=white) even though you add the <b>Environment Variables</b> you will maybe not be able to get it launched due to a bug in their Vite configuration. If you're invited as member and set your Environement Variables it works perfectly fine. But as a guest even with workarounds we face Vite errors and it is therefore <u>almost unusubale for UI Demo reviews</u> currently on my stack.<br>
+<b> <br>This issue / bug is reported to Codesandbox already and they are on it.</b>
+
+
+
