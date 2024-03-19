@@ -8,12 +8,13 @@
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![Nuxtjs](https://img.shields.io/badge/Nuxt-002E3B?style=for-the-badge&logo=nuxtdotjs&logoColor=#00DC82)
 ![Vue.js](https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)
+
 <h3>This project utilizes:</h3>
 <ul>
     <li>Vue.js and Nuxt.js for the frontend framework</li>
     <li>FontAwesome for Vue.js for scalable vector icons</li>
     <li>Algolia Vue InstantSearch for seamless integration of Algolia search services</li>
-</ul><
+</ul>
 <h3>Documentation Links</h3>
 <ul>
     <li><a href="https://www.algolia.com/doc/api-reference/widgets/instantsearch/vue/">Algolia Vue InstantSearch</a></li>
@@ -22,8 +23,7 @@
     <li><a href="https://fortawesome.github.io/Font-Awesome/">FontAwesome for Vue</a></li>
 </ul>
 <br><h2>💻 CLIENT ARCHITECTURE</h3><br>
-![MIRO](https://img.shields.io/badge/Miro-050038.svg?style=for-the-badge&logo=Miro&logoColor=white)
-[CICK HERE TO OPEN](https://miro.com/app/board/uXjVNgkFMqI=/?share_link_id=425562275864)
+![Miro](https://img.shields.io/badge/Miro-050038.svg?style=for-the-badge&logo=Miro&logoColor=white) [CICK HERE TO OPEN](https://miro.com/app/board/uXjVNgkFMqI=/?share_link_id=425562275864)
 
 
 <br><h2>🌳 PROJECT STRUCTRUE </h2><br><B>
