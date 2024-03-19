@@ -410,9 +410,9 @@ const priceRangeItems = [
 ];
 
 const hitsPerPageItems = [
-  { value: 6, label: "6 Products per Page", default: true },
-  { value: 12, label: "12 Products per Page" },
-  { value: 18, label: "18 Products per Page" },
+  { value: 12, label: "12 Products per Page", default: true },
+  { value: 24, label: "24 Products per Page" },
+  { value: 36, label: "36 Products per Page" },
   { value: 10000, label: "Show all Search Results" },
 ];
 </script>
