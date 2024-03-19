@@ -41,7 +41,7 @@ Documentation Links:
 
 <template>
   <!-- InstantSearch component initialization -->
-  <ais-instant-search :index-name="indexName" :search-client="algolia">
+  <ais-instant-search :index-name="indexName" :search-client="algolia" :future="futureConfig">
     <div>
       <!-- Header section -->
       <div class="app-header">
@@ -184,9 +184,9 @@ Documentation Links:
               </div>
               <!-- Cart icon -->
               <div class="cart-icon">
-                <font-awesome-icon icon="cart-plus"  @click="resetCart" />
+                <font-awesome-icon icon="faCartPlus"  @click="resetCart" />
                 <div class="cart-count"  @click="resetCart" >{{ cartCount }}</div>
-                <font-awesome-icon icon="fa-solid fa-x" class="remove-total-icon" @click="resetCart" />
+                <font-awesome-icon icon="faTimes" class="remove-total-icon" @click="resetCart" />
                 <div class="total-price"  @click="resetCart" >Total: <span class="sum">${{ totalPrice.toFixed(2) }}</span></div>
                 <div class="tooltip"  @click="resetCart" >Click Product to add to Cart</div>
               </div>
@@ -217,8 +217,10 @@ Documentation Links:
   import { faBars, faChevronDown, faBook } from '@fortawesome/free-solid-svg-icons';
   import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
   import { faCheckSquare as farCheckSquare } from '@fortawesome/free-regular-svg-icons';
+  import { faCartPlus, faTimes } from '@fortawesome/free-solid-svg-icons';
 
-
+  const faCartPlus = { prefix: 'fas', iconName: 'cart-plus' };
+  const faTimes = { prefix: 'fas', iconName: 'times' };
   const linkedin = faLinkedin;
   const github = faGithub;
   const indexName = 'ProductCatalog';
@@ -231,6 +233,7 @@ Documentation Links:
   const toggleBrowseProducts = () => { browseProductsVisible.value = !browseProductsVisible.value; };
   const browseIcon = () => { return browseProductsVisible.value ? faBars : faChevronDown; };
   const algolia = useAlgoliaRef();
+  const futureConfig = { preserveSharedStateOnUnmount: true,persistHierarchicalRootCount: true,};
   const cartCount = ref(0);
   const totalPrice = ref(0);
   const addToCart = (item: CartItem) => { cartCount.value++; totalPrice.value += item.price; };
