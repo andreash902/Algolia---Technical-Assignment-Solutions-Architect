@@ -75,7 +75,7 @@ yarn dev
 [VIEW UI DIRECTLY ON VERCEL](https://algolia-technical-assignment-solutions-architect-ojap3cqkl.vercel.app) ⬅️ SUGGESTED 
 
 ![CS](https://img.shields.io/badge/CodeSandbox-151515.svg?style=for-the-badge&logo=CodeSandbox&logoColor=white)
-[OPEN IN CODESANDBOX](https://algolia-technical-assignment-solutions-architect-ojap3cqkl.vercel.app) </b>
+[OPEN IN CODESANDBOX](https://codesandbox.io/p/github/andreash902/Algolia---Technical-Assignment-Solutions-Architect/master) </b>
 
 > **Important:** During testing I have encountered a bug with <br>CodeSandbox and Nuxt 3 Deployments we need to address first:
 > <b>The <b>.env</b> needs to be created with API-Key and APP-ID as expected which is fine:</b>
