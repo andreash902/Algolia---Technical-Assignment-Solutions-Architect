@@ -23,8 +23,8 @@
     <li><a href="https://fortawesome.github.io/Font-Awesome/">FontAwesome for Vue</a></li>
 </ul>
 <br><h2>💻 CLIENT ARCHITECTURE</h3><br>
-![MIRO](https://img.shields.io/badge/Miro-050038.svg?style=for-the-badge&logo=Miro&logoColor=white) 
 
+![MIRO](https://img.shields.io/badge/Miro-050038.svg?style=for-the-badge&logo=Miro&logoColor=white) 
 [CICK HERE TO OPEN](https://miro.com/app/board/uXjVNgkFMqI=/?share_link_id=425562275864)
 
 
