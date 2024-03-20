@@ -13,6 +13,8 @@
     "@algolia/autocomplete-js": "^1.17.0",
     "@algolia/autocomplete-plugin-query-suggestions": "^1.17.0",
     "@algolia/autocomplete-plugin-recent-searches": "^1.17.0",
+    "@algolia/client-insights": "^0.0.0",
+    "@algolia/client-search": "^4.22.1",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@fortawesome/free-regular-svg-icons": "^6.5.1",
@@ -23,6 +25,7 @@
     "algoliasearch": "^4.22.1",
     "instantsearch.js": "^4.66.0",
     "nuxt": "^3.10.3",
+    "search-insights": "^2.13.0",
     "vue": "^3.4.21"
   }
 }

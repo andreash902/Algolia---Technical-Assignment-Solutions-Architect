@@ -45,6 +45,7 @@ Documentation Links:
     :search-client="algolia"
     :future="futureConfig"
     :insights="true"
+    :clickAnalytics="true"
   >
     <div>
       <!-- Header section -->
@@ -195,13 +196,14 @@ Documentation Links:
               <!-- Hits rendering -->
               <ais-hits>
                 <template #item="{ item }">
+                  <a :href="'/product.html?queryID=' + item.__queryID" class="no-style" @click.prevent="saveQueryID(item.__queryID)">
                   <div class="hit-item" @click="addToCart(item)">
                     <div class="hit-add-to-car-container">
                       <div class="hit-item-add-to-cart">
                         <font-awesome-icon :icon="farCheckSquare" />
                       </div>
                     </div>
-                    <div class="hit-content">
+                    <div class="hit-content" >
                       <div class="hit-img-container">
                         <!-- Product image -->
                         <img class="hit-img" :src="item.image" />
@@ -252,7 +254,7 @@ Documentation Links:
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div></a>
                 </template>
               </ais-hits>
               <!-- Pagination and hits per page controls -->
@@ -271,11 +273,11 @@ Documentation Links:
                   class="remove-total-icon"
                   @click="resetCart"
                 />
-                <div class="total-price" @click="resetCart">
+                <div class="total-price" >
                   Total: <span class="sum">${{ totalPrice.toFixed(2) }}</span>
                 </div>
-                <div class="tooltip" @click="resetCart">
-                  Click Product to add to Cart
+                <div class="tooltip" @click="sendPurchaseEvent(items)">
+                  Buy All Items in Cart <br><span class="eventsim">(This simulates a Conversion)</span>
                 </div>
               </div>
             </div>
@@ -312,12 +314,31 @@ Documentation Links:
 </template>
 
 <script lang="ts" setup>
+import { defineProps } from 'vue'
+
+// Define props if necessary
+const props = defineProps({
+  item: Object
+})
+
+// Method to save queryID to localStorage
+const saveQueryID = (queryID: string) => {
+  localStorage.setItem("queryID", queryID);
+  console.log("QueryID saved to localStorage:", queryID);
+}
+interface CartItem {
+    name: string;
+    price: number;
+    objectID: string; // Add objectID property
+}
 import { ref } from "vue";
+import { useNuxtApp } from '#app';
+const nuxtApp = useNuxtApp();
+const { sendEvent } = nuxtApp;
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import {
   faBars,
   faChevronDown,
-  faBook,
   faCartPlus,
   faX,
 } from "@fortawesome/free-solid-svg-icons";
@@ -350,24 +371,70 @@ const futureConfig = {
   persistHierarchicalRootCount: true,
 };
 const cartCount = ref(0);
-const totalPrice = ref(0);
+const totalPrice = ref(0.0);
+
+
+
+
 const addToCart = (item: CartItem) => {
+  if (!item) {
+    console.error('Invalid item:', item);
+    return;
+  }
+
+  if (!Array.isArray(items)) {
+    console.error('Invalid or undefined items array:', items);
+    return;
+  }
+
+  // Retrieve queryID from localStorage
+  const queryID = localStorage.getItem("queryID") || "";
+  console.log('Query ID:', queryID);
+
+  // Send the event with the item and the queryID
+  nuxtApp.$sendEvent('addedToCartObjectIDsAfterSearch', item, 'One or more Items added to cart', queryID);
+
+  // Add the item to the items array
+  items.push(item);
+  
+  // Update cart count and total price
   cartCount.value++;
   totalPrice.value += item.price;
 };
+
+const items: CartItem[] = [];
+
+const sendPurchaseEvent = (items: CartItem[]) => {
+  // Retrieve queryID from localStorage
+  const queryID = localStorage.getItem("queryID") || "";
+  console.log('Query ID:', queryID);
+
+  // Extract objectIDs from each item
+  const objectIDs = items.map(item => item.objectID);
+
+  console.log('Item IDs:', objectIDs);
+
+  // Send the event with the array of objectIDs and the queryID
+  objectIDs.forEach(objectID => {
+    nuxtApp.$sendEvent('purchasedObjectIDsAfterSearch', { objectID, queryID }, 'One or more Items purchased', queryID);
+  });
+
+  // Clear the items array after purchase
+  items.splice(0, items.length);
+
+  // Reset cart count and total price
+  cartCount.value = 0;
+  totalPrice.value = 0;
+};
+
+
+
+
 const resetCart = () => {
   cartCount.value = 0;
   totalPrice.value = 0;
 };
 
-interface CartItem {
-  price: number;
-  image: string;
-  name: string;
-  rating: number;
-  description: string;
-  free_shipping?: boolean;
-}
 
 import {
   AisCurrentRefinements,
@@ -386,6 +453,11 @@ import {
   AisToggleRefinement,
   AisStats,
 } from "vue-instantsearch/vue3/es";
+
+import { connectInfiniteHitsWithInsights } from 'instantsearch.js/es/connectors';
+import { connectHitsWithInsights } from 'instantsearch.js/es/connectors';
+
+
 
 const brandsSectionVisible = ref(false);
 const categoriesSectionVisible = ref(false);
@@ -597,6 +669,12 @@ const hitsPerPageItems = [
   vertical-align: middle;
   margin-left: 10px;
 }
+
+.no-style {
+  text-decoration: none;
+  color: inherit;
+}
+
 
 .linkedin:hover,
 .github:hover,

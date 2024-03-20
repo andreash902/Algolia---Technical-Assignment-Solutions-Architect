@@ -75,7 +75,7 @@ html, body {
 
 .cart-icon {
     position: fixed;
-    bottom: 45px;
+    bottom: 60px;
     left: 15px;
     color: rgb(109, 108, 108);
     background-color: white;
@@ -105,12 +105,13 @@ html, body {
     align-items: center;
     justify-content: center;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    transition: color 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 
 .total-price {
     position: fixed;
-    bottom: 50px;
-    left: 70px;
+    bottom: 60px;
+    left: 72px;
     min-width: 120px;
     max-width: 120px;
     color: #5a5e9a;
@@ -123,12 +124,16 @@ html, body {
     font-size: 14px;
     text-align: center;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.135);
-
+    transition: color 0.3s ease, box-shadow 0.3s ease;
 }
+.total-price:hover{
+    color: black;
+  }
+
   
 .tooltip {
     position: absolute;
-    top: 55px;
+    top: 60px;
     left: -2px;
     min-width: 178px;
     color: rgb(109, 108, 108);
@@ -140,6 +145,13 @@ html, body {
     font-size: 12px;
     text-align: center;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.135);
+    transition: color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+.tooltip:hover{
+    animation: pulse-grow-small 1s forwards;
+    color: black;
+    box-shadow: 0px 0px 8px hsl(233, 100%, 66%);
   }
 
 .remove-total-icon {
@@ -158,16 +170,20 @@ html, body {
     justify-content: center;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
     opacity: 0;
-    transition: opacity 0.1s ease;
+    transition: opacity 0.6s ease;
   }
 .sum {
     font-weight: bold;
 }
+.no-style-link {
+    text-decoration: none; 
+    color: inherit; 
+  }
 .hover-trigger:hover,
 .cart-icon:hover .remove-total-icon,
 .total-price:hover .remove-total-icon,
-.cart-count:hover .remove-total-icon,
-.tooltip:hover + .cart-icon .remove-total-icon,
+.cart-count:hover .remove-total-icon:hover
++ .cart-icon .remove-total-icon,
 .remove-total-icon:hover {
     opacity: 1;
   }
@@ -394,6 +410,10 @@ html, body {
     margin-left: 50px;
 }
 
+.eventsim{
+    font-size: 9px;
+}
+
 .hit-description {
     font-size: 12px;
     font-weight: 400;
@@ -443,7 +463,9 @@ html, body {
     opacity: 0;
 }
 
-@keyframes pulse-grow {0%{transform:scale(1);opacity:0}50%{transform:scale(1.2);opacity:1}100%{transform:scale(1)}}
+@keyframes pulse-grow {0%{transform:scale(1);opacity:0}50%{transform:scale(1.1);opacity:1}100%{transform:scale(1)}}
+@keyframes pulse-grow-small {0%{transform:scale(1);opacity:0.5}50%{transform:scale(1.05);opacity:1}100%{transform:scale(1)}}
+
 
 
 .hit-item:hover .hit-item-add-to-cart {

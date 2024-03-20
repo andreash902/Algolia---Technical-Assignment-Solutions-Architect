@@ -4,7 +4,7 @@ export default defineNuxtConfig({
     title: 'Algolia Client UI Demo',
   },
   css: [
-    '~/assets/style.css', // Keeps your custom styles
+    '~/assets/style.css', 
   ],
   modules: ['@nuxtjs/algolia', '@nuxt/image'],
   algolia: {
@@ -13,6 +13,8 @@ export default defineNuxtConfig({
     }
   },
   plugins: [
-    '~/plugins/fontawesome.js' 
+    '~/plugins/fontawesome.js',
+    '~/plugins/algolia-insights.js' 
+ 
   ]
 } as any);
