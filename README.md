@@ -54,7 +54,7 @@ REPOSITORY<br></b>
 <pre>3. Fire up CodeSandbox & ideally (*1) Vercel to review the UI (+ it's code if you're bold enough to scroll)</pre>
 
 <br><h2>🔎 LOCAL DEV PREVIEW </h2>
-Locally preview production build:
+
 
 ```bash
 # npm
