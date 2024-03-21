@@ -72,7 +72,7 @@ yarn dev
 <br><h2>🏖️ TRY ON SANDBOXES</h2><b>
 
 ![Vercel](https://img.shields.io/badge/Vercel-000000.svg?style=for-the-badge&logo=Vercel&logoColor=white)
-[VIEW UI DIRECTLY ON VERCEL](https://algolia-technical-assignment-solutions-architect-ojap3cqkl.vercel.app) ⬅️ SUGGESTED 
+[VIEW UI DIRECTLY ON VERCEL]([https://algolia-technical-assignment-solutions-architect-ojap3cqkl.vercel.app](https://algolia-technical-assignment-solutions-architect.vercel.app/)) ⬅️ SUGGESTED 
 
 ![CS](https://img.shields.io/badge/CodeSandbox-151515.svg?style=for-the-badge&logo=CodeSandbox&logoColor=white)
 [OPEN IN CODESANDBOX](https://codesandbox.io/p/github/andreash902/Algolia---Technical-Assignment-Solutions-Architect/master) </b>
